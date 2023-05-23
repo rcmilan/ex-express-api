@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import { User } from "./models/user";
 import { UserService } from "./services/userService";
 import swaggerJsDoc from "swagger-jsdoc";
@@ -49,11 +49,11 @@ app.use(express.json());
  *             schema:
  *               $ref: '#/components/schemas/User'
  */
-app.post("/user", (req, res) => {
+app.post("/user", (req: Request, res: Response) => {
   const { name, email, code } = req.body;
   const user = new User(name, email, code);
   userService.saveUser(user);
-  res.json(user);
+  res.status(200).json(user);
 });
 
 /**
@@ -77,7 +77,7 @@ app.post("/user", (req, res) => {
  *       404:
  *         description: The user was not found
  */
-app.get("/user/:id", (req, res) => {
+app.get("/user/:id", (req: Request, res: Response) => {
   const user = userService.getUser(req.params.id);
   if (user) {
     res.json(user);
