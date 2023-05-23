@@ -1,4 +1,10 @@
 # Express API
+
+## Executar o projeto
+```bash
+yarn;
+yarn start;
+```
 ## 1. Start new project
 ```bash
 mkdir expressAPI
