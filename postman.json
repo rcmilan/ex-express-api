@@ -1,0 +1,44 @@
+{
+  "info": {
+    "name": "Node Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": ""
+  },
+  "item": [
+    {
+      "name": "http://localhost:4200/user",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:4200/user",
+          "path": ["user"],
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4200"
+        },
+        "body": {
+          "mode": "raw",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "raw": "{\n  \"name\": \"name\",\n  \"email\": \"email\",\n  \"code\": 123\n}"
+        }
+      }
+    },
+    {
+      "name": "http://localhost:4200/user",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:4200/user/131f83b5-f3b2-4654-88ed-3b2ccd15fe47",
+          "path": ["user", "131f83b5-f3b2-4654-88ed-3b2ccd15fe47"],
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4200"
+        }
+      }
+    }
+  ]
+}
